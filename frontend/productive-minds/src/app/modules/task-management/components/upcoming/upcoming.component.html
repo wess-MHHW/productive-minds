@@ -1,0 +1,76 @@
+<app-loading *ngIf="loading"></app-loading>
+<div class="row">
+  <div class="container row">
+    <app-snackbar
+      *ngIf="message.length !== 0"
+      [message]="message"
+    ></app-snackbar>
+    <div>
+      <div class="row align-center title">
+        <h1>Upcoming</h1>
+        <div class="number">
+          <p>{{ week.length }}</p>
+        </div>
+      </div>
+      <button type="button" (click)="open()" class="row align-center">
+        <i class="fa-solid fa-plus"></i>
+        <span>Add New Task</span>
+      </button>
+      <div class="wrapper p-b" *ngIf="today.length !== 0">
+        <h2>Today</h2>
+
+        <div class="tasks-cotnainer column gap-1">
+          <ng-container *ngFor="let task of today">
+            <app-task
+              [task]="task"
+              (done)="done($event)"
+              (edit)="edit($event)"
+            ></app-task
+          ></ng-container>
+        </div>
+      </div>
+
+      <div class="row gap-2">
+        <div class="wrapper" *ngIf="tomorrow.length !== 0">
+          <div>
+            <h2>Tomorrow</h2>
+
+            <div class="tasks-cotnainer column gap-1">
+              <ng-container *ngFor="let task of tomorrow">
+                <app-task
+                  [details]="false"
+                  [task]="task"
+                  (done)="done($event)"
+                  (edit)="edit($event)"
+                ></app-task
+              ></ng-container>
+            </div>
+          </div>
+        </div>
+        <div class="wrapper" *ngIf="week.length !== 0">
+          <h2>This week</h2>
+
+          <div class="tasks-cotnainer column gap-1">
+            <ng-container *ngFor="let task of week">
+              <app-task
+                [details]="false"
+                [task]="task"
+                (done)="done($event)"
+                (edit)="edit($event)"
+              ></app-task
+            ></ng-container>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-dialog
+    [task]="selected"
+    (close)="close()"
+    *ngIf="show"
+    [type]="title"
+    (edit)="onEdit($event)"
+    (create)="onCreate($event)"
+    (delete)="onDelete($event)"
+  ></app-dialog>
+</div>

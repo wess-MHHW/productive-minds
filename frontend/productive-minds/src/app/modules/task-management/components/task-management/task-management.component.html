@@ -1,0 +1,13 @@
+<div class="container row">
+  <div class="menu-container">
+    <app-menu
+      [(show)]="show"
+      [(selected)]="selected"
+      [categories]="user.categories!"
+      [tags]="user.tags!"
+    ></app-menu>
+  </div>
+  <div class="details-container">
+    <router-outlet></router-outlet>
+  </div>
+</div>

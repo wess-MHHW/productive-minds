@@ -1,0 +1,162 @@
+/* || FONTS */
+@font-face {
+  font-family: "Sen";
+  font-weight: 700;
+  src: url("./assets/fonts/Sen-Bold.woff") format("woff"),
+    url("./assets/fonts/Sen-Bold.woff2") format("woff2"),
+    url("./assets/fonts/Sen-Bold.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "Sen";
+  font-weight: 800;
+  src: url("./assets/fonts/Sen-ExtraBold.woff") format("woff"),
+    url("./assets/fonts/Sen-ExtraBold.woff2") format("woff2"),
+    url("./assets/fonts/Sen-ExtraBold.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "Sen";
+  font-weight: 400;
+  src: url("./assets/fonts/Sen-Regular.woff") format("woff"),
+    url("./assets/fonts/Sen-Regular.woff2") format("woff2"),
+    url("./assets/fonts/Sen-Regular.ttf") format("ttf");
+}
+
+/* || VARIABLES */
+:root {
+  /* COLORS */
+  --clr-yellow: #ffd43b;
+  --clr-black: #212529;
+  --clr-dark-grey: #646464;
+  --clr-soft-grey: #fafafa;
+}
+
+/* || RESET */
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+}
+
+/* || GENERAL STYLES */
+
+body {
+  min-height: 100vh;
+  font-family: "Sen";
+}
+
+/* || UTITLITY CLASSES */
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.full-center {
+  align-items: center;
+  justify-content: center;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.gap-half {
+  gap: 0.5rem;
+}
+
+.gap-1 {
+  gap: 1rem;
+}
+
+.gap-2 {
+  gap: 2rem;
+}
+
+.gap-3 {
+  gap: 3rem;
+}
+
+.p-1 {
+  padding: 1rem;
+}
+
+.p-2 {
+  padding: 2rem;
+}
+
+.p-3 {
+  padding: 3rem;
+}
+
+.m-1 {
+  margin: 1rem;
+}
+
+.m-2 {
+  margin: 2rem;
+}
+
+.m-3 {
+  margin: 3rem;
+}
+
+.btn {
+  all: unset;
+  text-align: center;
+  padding: 0.7rem;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 8px;
+  user-select: none;
+}
+
+.primary-btn {
+  color: var(--clr-black);
+  background-color: var(--clr-yellow);
+}
+
+.primary-btn:hover {
+  opacity: 0.85;
+}
+
+.secondary-btn {
+  background-color: #ebebeb;
+  color: var(--clr-dark-grey);
+}
+
+.secondary-btn:hover {
+  color: var(--clr-black);
+}
+
+.transparent-btn {
+  color: var(--clr-dark-grey);
+  width: max-content;
+  align-self: center;
+}
+
+.transparent-btn:hover {
+  color: var(--clr-black);
+  transition: color ease-in-out 0.5s;
+}

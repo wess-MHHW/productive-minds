@@ -1,0 +1,55 @@
+<div class="container column gap-half">
+  <div class="row align-center gap-1 p-1">
+    <div class="input" [ngClass]="{ done: task.done }" (click)="onClick()">
+      <svg
+        *ngIf="task.done"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 448 512"
+      >
+        <path
+          fill="#ffff"
+          d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"
+        />
+      </svg>
+    </div>
+    <p>{{ task.title }}</p>
+    <div class="icon small" (click)="onEdit()">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+        <path
+          fill="#878787"
+          d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"
+        />
+      </svg>
+    </div>
+  </div>
+  <div *ngIf="details" class="column p-x gap-half">
+    <div class="row align-center gap-2">
+      <div class="date row gap-half">
+        <svg
+          class="icon"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 448 512"
+        >
+          <path
+            fill="#787878"
+            d="M128 0c17.7 0 32 14.3 32 32V64H288V32c0-17.7 14.3-32 32-32s32 14.3 32 32V64h48c26.5 0 48 21.5 48 48v48H0V112C0 85.5 21.5 64 48 64H96V32c0-17.7 14.3-32 32-32zM0 192H448V464c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V192zM305 305c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-47 47-47-47c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l47 47-47 47c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l47-47 47 47c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-47-47 47-47z"
+          />
+        </svg>
+        <p>{{ task.date | formatDate }}</p>
+      </div>
+      <div class="category row gap-half align-center">
+        <div
+          class="color"
+          [ngStyle]="{ 'background-color': task.category.color }"
+        ></div>
+        <p>{{ task.category.title }}</p>
+      </div>
+      <div class="tags row gap-1">
+        <p *ngFor="let tag of task.tags" [ngStyle]="{ color: tag.color }">
+          {{ "#" + tag.title }}
+        </p>
+      </div>
+    </div>
+    <p>{{ task.description }}</p>
+  </div>
+</div>

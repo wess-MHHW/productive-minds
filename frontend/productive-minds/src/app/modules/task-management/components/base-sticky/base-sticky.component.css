@@ -1,0 +1,52 @@
+.container {
+  padding: 1rem;
+  border-radius: 5px;
+  background-color: var(--clr-soft-grey);
+  height: 10rem;
+  overflow-y: scroll;
+  display: flex;
+  place-content: center;
+  position: relative;
+}
+
+.icons {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.icon {
+  width: 0.5rem;
+  height: 0.5rem;
+  cursor: pointer;
+}
+
+.plus {
+  cursor: pointer;
+}
+
+svg {
+  width: 1rem;
+}
+
+.container::-webkit-scrollbar {
+  display: none;
+}
+
+textarea {
+  font: inherit;
+  background-color: transparent;
+  border: none;
+  border-radius: 5px;
+  resize: none;
+  width: 100%;
+  height: 100%;
+}
+
+textarea:focus {
+  outline: none;
+}

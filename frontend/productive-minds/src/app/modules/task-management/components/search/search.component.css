@@ -1,0 +1,25 @@
+.container {
+  padding: 1rem 2rem;
+  width: 100%;
+}
+
+.title {
+  color: var(--clr-black);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+h1 {
+  color: var(--clr-black);
+  font-weight: 700;
+}
+
+.number {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-left: 5rem;
+  color: var(--clr-black);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  padding-inline: 1rem;
+}

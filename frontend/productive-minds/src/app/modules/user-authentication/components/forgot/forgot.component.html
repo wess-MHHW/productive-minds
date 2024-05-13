@@ -1,0 +1,60 @@
+<app-snackbar *ngIf="message.length !== 0" [message]="message"></app-snackbar>
+<app-loading *ngIf="loading"></app-loading>
+<div class="container column justify-center gap-1">
+  <h1>Forgot password</h1>
+  <p>
+    Enter the email address associated with your account and we'll send you
+    instructions to reset it.
+  </p>
+  <form
+    class="column justify-center"
+    (ngSubmit)="onSubmit()"
+    [formGroup]="form1"
+  >
+    <div class="email">
+      <label for="email">Email</label>
+      <input
+        [ngClass]="{ wrong: show && form1.get('email')?.invalid }"
+        type="email"
+        id="email"
+        formControlName="email"
+        placeholder="Email address"
+        [readOnly]="disabled"
+      />
+      <p [ngClass]="{ error: true, show: show && form1.get('email')?.invalid }">
+        {{
+          form1.get("email")?.errors?.hasOwnProperty("pattern")
+            ? "Invalid Email."
+            : "Email is required."
+        }}
+      </p>
+    </div>
+    <button *ngIf="step === 1" class="btn primary-btn" type="submit">
+      Next
+    </button>
+  </form>
+  <form
+    class="column justify-center"
+    *ngIf="step === 2"
+    (ngSubmit)="reset()"
+    [formGroup]="form2"
+  >
+    <div class="code">
+      <label for="code">Code</label>
+      <input
+        [ngClass]="{ wrong: show && form2.get('code')?.invalid }"
+        type="text"
+        id="code"
+        formControlName="code"
+        placeholder="Code"
+      />
+      <p [ngClass]="{ error: true, show: show && form2.get('code')?.invalid }">
+        {{ "Code is required." }}
+      </p>
+    </div>
+    <button class="btn primary-btn" type="submit">Next</button>
+  </form>
+  <button type="button" class="btn transparent-btn" *ngIf="step === 2">
+    Code not received? Resend Code
+  </button>
+</div>

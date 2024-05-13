@@ -1,0 +1,50 @@
+<div class="wrapper row">
+  <div class="container column">
+    <div class="">
+      <h1>Calendar</h1>
+      <app-snackbar
+        *ngIf="message.length !== 0"
+        [message]="message"
+      ></app-snackbar>
+      <div class="column gap-1">
+        <div class="row gap-half">
+          <button (click)="sub()">-</button>
+          <h3>{{ year + ", " + getdate() }}</h3>
+          <button (click)="add()">+</button>
+        </div>
+
+        <div class="grid">
+          <ng-container *ngFor="let day of dates; let i = index">
+            <p
+              (click)="select(day, i)"
+              [ngClass]="{
+                item: i > 6,
+                element: i <= 6,
+                today: today.toString() === day.toString(),
+                selected: this.selected.toString() === day.toString() && i > 6
+              }"
+            >
+              <span [ngClass]="{ fs: i > 6 }">{{ formatoo(day) }}</span
+              ><span
+                [ngClass]="{ ls: i > 6 }"
+                *ngIf="tasks.hasOwnProperty(day.toString())"
+                >{{ day | test : tasks }}</span
+              >
+            </p>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="show">
+    <app-details
+      (close)="onClose($event)"
+      [date]="selected"
+      [tasks]="
+        tasks.hasOwnProperty(selected.toString())
+          ? tasks[selected.toString()]
+          : []
+      "
+    ></app-details>
+  </div>
+</div>

@@ -1,0 +1,82 @@
+.container {
+  height: 100%;
+  padding: 1.5rem 3rem;
+  overflow-x: hidden;
+}
+h1 {
+  color: var(--clr-black);
+  font-weight: 700;
+}
+
+form > div {
+  margin-bottom: 0.5rem;
+}
+
+form > button {
+  margin-top: 0.5rem;
+}
+
+.password {
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+
+.confirm-password {
+  position: relative;
+}
+
+.icon {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  padding-inline: 0.7rem;
+  display: flex;
+  place-content: center;
+  right: 0;
+  cursor: pointer;
+}
+
+input {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+input.wrong {
+  border: 1px solid rgba(255, 3, 3, 0.3);
+}
+
+#password,
+#confirm-password {
+  padding-right: 2rem;
+}
+
+input:focus {
+  outline-color: black;
+}
+
+input.wrong:focus {
+  outline-color: red;
+}
+
+svg {
+  display: block;
+  width: 1rem;
+  aspect-ratio: 1;
+}
+
+label {
+  display: none;
+}
+
+.error {
+  font-size: 0.8rem;
+  color: red;
+  text-align: end;
+  display: none;
+}
+
+.show.error {
+  display: block;
+}

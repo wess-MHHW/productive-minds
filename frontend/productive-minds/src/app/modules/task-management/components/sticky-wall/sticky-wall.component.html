@@ -1,0 +1,16 @@
+<app-loading *ngIf="loading"></app-loading>
+<div class="container">
+  <h1>Sticky wall</h1>
+  <app-snackbar *ngIf="message.length !== 0" [message]="message"></app-snackbar>
+  <div class="stickies">
+    <ng-container *ngFor="let sticky of stickies; let i = index">
+      <app-sticky
+        [sticky]="sticky"
+        (edit)="onEdit($event)"
+        (delete)="onDelete($event)"
+        [index]="i"
+      ></app-sticky
+    ></ng-container>
+    <app-base-sticky (create)="onCreate($event)"></app-base-sticky>
+  </div>
+</div>

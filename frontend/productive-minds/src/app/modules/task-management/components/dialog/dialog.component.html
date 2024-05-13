@@ -1,0 +1,115 @@
+<div class="wrapper">
+  <div class="container column">
+    <div class="row space-between align-center">
+      <h2>Task:</h2>
+      <div class="icon" (click)="onClick()">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+          <path
+            fill="#787878"
+            d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"
+          />
+        </svg>
+      </div>
+    </div>
+    <form class="column gap-half" (ngSubmit)="onSubmit()" [formGroup]="form">
+      <div>
+        <input
+          type="text"
+          placeholder="Title"
+          [value]="task?.title || ''"
+          formControlName="title"
+          name="title"
+          [ngClass]="{ wrong: submit && form.get('title')?.invalid }"
+        />
+        <p
+          [ngClass]="{
+            error: true,
+            show: submit && form.get('title')?.invalid
+          }"
+        >
+          {{ "Title is required." }}
+        </p>
+      </div>
+      <textarea
+        name="description"
+        id="description"
+        formControlName="description"
+        rows="10"
+        placeholder="Description"
+        [value]="task?.description || ''"
+      ></textarea>
+      <div class="row align-center">
+        <p for="category" class="m-r w">List</p>
+        <app-dropdown
+          (selectedChange)="onChange($event)"
+          [options]="user.categories"
+          [selected]="task?.category"
+        ></app-dropdown>
+      </div>
+
+      <div class="row align-center">
+        <p class="m-r w">Tags</p>
+        <ul class="row align-center wrap" formArrayName="tags">
+          <li *ngFor="let tag of user.tags; let i = index" [formGroupName]="i">
+            <label
+              [ngStyle]="{ color: tag.color }"
+              [for]="tag.title.toLowerCase()"
+              >{{ "#" + tag.title }}</label
+            >
+            <input
+              type="checkbox"
+              [name]="tag.title.toLowerCase()"
+              [id]="tag.title.toLowerCase()"
+              [checked]="hasTag(task, tag.title)"
+              formControlName="checked"
+            />
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="row align-center">
+          <label class="m-r w">Date</label>
+          <input
+            type="datetime-local"
+            [value]="formatDate(task?.date)"
+            formControlName="date"
+            [ngClass]="{
+              wrong:
+                submit &&
+                ((type === 'create' && form.get('date')?.invalid) ||
+                  (type === 'edit' &&
+                    form.get('date')?.errors?.hasOwnProperty('required')))
+            }"
+          />
+        </div>
+        <p
+          [ngClass]="{
+            error: true,
+            show:
+              submit &&
+              ((type === 'create' && form.get('date')?.invalid) ||
+                (type === 'edit' &&
+                  form.get('date')?.errors?.hasOwnProperty('required')))
+          }"
+        >
+          {{
+            type === "create"
+              ? form.get("date")?.errors?.hasOwnProperty("required")
+                ? "Date is required."
+                : "Future date required."
+              : "Date is required."
+          }}
+        </p>
+      </div>
+      <div class="buttons row align-center gap-half">
+        <button type="button" class="btn secondary-btn" (click)="do()">
+          {{ type === "edit" ? "Delete task" : "Cancel" }}
+        </button>
+        <button type="submit" class="btn primary-btn">
+          {{ type === "edit" ? "Save changes" : "Create task" }}
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

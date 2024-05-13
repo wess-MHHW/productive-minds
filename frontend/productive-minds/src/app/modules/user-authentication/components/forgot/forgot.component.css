@@ -1,0 +1,51 @@
+.container {
+  height: 100%;
+  padding: 1.5rem 3rem;
+  overflow-x: hidden;
+}
+
+h1 {
+  color: var(--clr-black);
+  font-weight: 700;
+}
+
+form > div {
+  margin-bottom: 0.5rem;
+}
+
+form > button {
+  margin-top: 0.5rem;
+}
+input {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+input:focus {
+  outline-color: black;
+}
+
+label {
+  display: none;
+}
+
+input.wrong {
+  border: 1px solid rgba(255, 3, 3, 0.3);
+}
+
+input.wrong:focus {
+  outline-color: red;
+}
+
+.error {
+  font-size: 0.8rem;
+  color: red;
+  text-align: end;
+  display: none;
+}
+
+.show.error {
+  display: block;
+}

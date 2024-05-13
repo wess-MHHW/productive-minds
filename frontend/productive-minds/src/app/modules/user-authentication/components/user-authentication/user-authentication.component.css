@@ -1,0 +1,25 @@
+.container {
+  height: 100vh;
+}
+
+.container > div {
+  width: 50%;
+  max-height: calc(100vh - 2rem);
+  margin: 2rem 1rem 2rem 2rem;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.container div:last-child {
+  margin: 2rem 2rem 2rem 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  background-color: var(--clr-soft-grey);
+  position: relative;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: calc(100vh - 4rem);
+  object-fit: cover;
+}

@@ -1,0 +1,29 @@
+.done {
+  color: #19e6a8;
+}
+
+.not-done {
+  color: #ff3d3d;
+}
+
+.yet {
+  color: var(--clr-black);
+}
+
+.icon {
+  width: 1.2rem;
+  aspect-ratio: 1;
+  display: flex;
+  place-content: center;
+  cursor: pointer;
+}
+
+.container {
+  flex: 1;
+  background-color: var(--clr-soft-grey);
+  width: 18rem;
+  min-height: calc(100vh - 2rem);
+  padding: 0.8rem 0.7rem;
+  border-radius: 8px;
+  height: 100%;
+}

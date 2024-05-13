@@ -1,0 +1,10 @@
+.container {
+  min-height: 100vh;
+  padding: 1rem;
+  position: relative;
+}
+
+.details-container {
+  flex: 1;
+  position: relative;
+}

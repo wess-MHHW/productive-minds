@@ -1,0 +1,36 @@
+@font-face {
+    font-family: 'Sen';
+    src: url('Sen-Bold.eot');
+    src: local('Sen Bold'), local('Sen-Bold'),
+        url('Sen-Bold.eot?#iefix') format('embedded-opentype'),
+        url('Sen-Bold.woff2') format('woff2'),
+        url('Sen-Bold.woff') format('woff'),
+        url('Sen-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Sen';
+    src: url('Sen-ExtraBold.eot');
+    src: local('Sen ExtraBold'), local('Sen-ExtraBold'),
+        url('Sen-ExtraBold.eot?#iefix') format('embedded-opentype'),
+        url('Sen-ExtraBold.woff2') format('woff2'),
+        url('Sen-ExtraBold.woff') format('woff'),
+        url('Sen-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Sen';
+    src: url('Sen-Regular.eot');
+    src: local('Sen Regular'), local('Sen-Regular'),
+        url('Sen-Regular.eot?#iefix') format('embedded-opentype'),
+        url('Sen-Regular.woff2') format('woff2'),
+        url('Sen-Regular.woff') format('woff'),
+        url('Sen-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+

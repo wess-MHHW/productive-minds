@@ -1,0 +1,15 @@
+.container {
+  padding: 1rem 2rem;
+}
+
+h1 {
+  color: var(--clr-black);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.stickies {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(200px, 1fr));
+  gap: 1rem;
+}

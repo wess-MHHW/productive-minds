@@ -1,0 +1,221 @@
+.wrapper {
+  height: 100%;
+}
+
+.container {
+  background-color: var(--clr-soft-grey);
+  width: 18rem;
+  min-height: calc(100vh - 2rem);
+  padding: 0.8rem 0.7rem;
+  border-radius: 8px;
+  position: sticky;
+  top: 1rem;
+}
+
+.hamburger-menu {
+  color: var(--clr-dark-grey);
+  cursor: pointer;
+  font-size: 1.1rem;
+  position: sticky;
+  top: 1rem;
+}
+
+.hamburger-menu:hover {
+  color: var(--clr-black);
+}
+
+.p {
+  padding: 0.5rem;
+}
+
+.title {
+  font-size: 1.2rem;
+  color: var(--clr-black);
+  font-weight: 700;
+}
+
+.search-field {
+  position: relative;
+  margin-top: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+input {
+  width: 100%;
+  background-color: var(--clr-soft-grey);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  padding: 0.4rem 0.7rem 0.4rem 2rem;
+  border-radius: 5px;
+}
+
+label {
+  display: none;
+}
+
+.search-field .icon {
+  position: absolute;
+  width: auto;
+  height: 100%;
+  aspect-ratio: 1;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-field .icon svg {
+  display: block;
+  height: 45%;
+  width: auto;
+}
+
+.sub-title {
+  text-transform: uppercase;
+  color: var(--clr-black);
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.options,
+.categories {
+  padding-bottom: 0.8rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  row-gap: 0.5rem;
+}
+
+.option,
+.category {
+  padding: 0.2rem;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.icon {
+  width: 0.8rem;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0.5rem;
+}
+
+svg {
+  display: block;
+  height: 80%;
+  width: auto;
+}
+
+.bottom {
+  margin-top: auto;
+}
+
+.count {
+  margin-left: auto;
+  background-color: rgba(128, 128, 128, 0.2);
+  color: rgba(135, 135, 135, 1);
+  font-size: 0.6rem;
+  height: 100%;
+  min-width: 1.2rem;
+  font-weight: 600;
+  padding-inline: 0.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 2px;
+}
+
+.color {
+  width: 0.8rem;
+  height: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0.5rem;
+  border-radius: 3px;
+}
+
+.category:last-child {
+  text-transform: capitalize;
+}
+
+.category:last-child > div {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.tags {
+  row-gap: 0.2rem;
+  column-gap: 0.2rem;
+  margin-bottom: 3rem;
+}
+
+.tag {
+  padding: 0.2rem;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 0.8rem;
+  cursor: pointer;
+  padding: 0.2rem 0.5rem;
+  color: var(--clr-black);
+}
+
+.tag:last-child {
+  text-transform: capitalize;
+  background-color: rgba(128, 128, 128, 0.1);
+}
+
+.selected {
+  background-color: rgba(128, 128, 128, 0.3) !important;
+}
+
+.selected .key {
+  font-weight: 900;
+}
+
+.selected .count {
+  background-color: white;
+  color: var(--clr-black);
+}
+
+.selected .fa-plus {
+  color: var(--clr-black);
+}
+
+.colors {
+  gap: 1rem;
+  justify-content: center;
+}
+
+.colors .color {
+  margin-right: 0;
+}
+
+.list-input {
+  position: relative;
+}
+
+.list-input .color {
+  position: absolute;
+  width: auto;
+  height: 100%;
+  aspect-ratio: 1;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.list-input .color > div {
+  height: 45%;
+  aspect-ratio: 1;
+  border-radius: 3px;
+}
+
+.list {
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 1rem;
+  border-radius: 5px;
+  margin-top: 0.5rem;
+}
